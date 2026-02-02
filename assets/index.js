@@ -1,56 +1,57 @@
-const allInput = document.querySelectorAll("input, textarea");
-const submitBTN = document.querySelector(".submit");
-const succed = document.querySelector(".succed");
+const form = document.getElementById("contactForm");
+const success = document.querySelector(".success");
 
-submitBTN.addEventListener("click", function (e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let isValid = true;
 
-  const checked = document.querySelector(
-    "input[type='radio'][name='queryType']:checked"
+  const inputs = form.querySelectorAll("input, textarea");
+  const radioChecked = form.querySelector(
+    "input[type='radio'][name='query']:checked"
   );
 
-  allInput.forEach((input) => {
+  inputs.forEach((input) => {
     let parent = input.parentElement;
     let error = parent.querySelector(".error");
 
     if (input.type === "radio") {
-      parent = input.closest(".Quary-type");
+      parent = input.closest(".query-type");
       error = parent.querySelector(".error");
     }
 
     if (!error) return;
 
-    const displayErr = () => (error.style.display = "block");
-    const hideErr = () => (error.style.display = "none");
+    const showError = () => (error.style.display = "block");
+    const hideError = () => (error.style.display = "none");
 
     if (input.type === "checkbox") {
       if (!input.checked) {
-        displayErr();
+        showError();
         isValid = false;
-      } else hideErr();
+      } else hideError();
     } else if (input.type === "email") {
       if (!input.checkValidity()) {
-        displayErr();
+        showError();
         isValid = false;
-      } else hideErr();
+      } else hideError();
     } else if (input.type === "radio") {
-      if (!checked) {
-        displayErr();
+      if (!radioChecked) {
+        showError();
         isValid = false;
-      } else hideErr();
+      } else hideError();
     } else {
       if (input.value.trim() === "") {
-        displayErr();
+        showError();
         isValid = false;
-      } else hideErr();
+      } else hideError();
     }
   });
 
   if (isValid) {
-    succed.style.display = "block";
+    success.style.display = "block";
+    form.reset();
   } else {
-    succed.style.display = "none";
+    success.style.display = "none";
   }
 });

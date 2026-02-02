@@ -3,24 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="form">
-      <h1 class="contact-us">Contact Us</h1>
+      <h1>Contact Us</h1>
 
-      <form action="#">
+      <form id="contactForm" novalidate>
         <div class="name-info">
           <div class="name">
-            <label for="name">First Name <span>*</span></label>
-            <input type="text" id="name" />
+            <label for="first-name">First Name <span>*</span></label>
+            <input type="text" id="first-name" required />
             <p class="error">This field is required</p>
           </div>
 
-          <div class="family">
+          <div class="last-name">
             <label for="last-name">Last Name <span>*</span></label>
-            <input type="text" id="last-name" />
+            <input type="text" id="last-name" required />
             <p class="error">This field is required</p>
           </div>
         </div>
@@ -31,51 +37,42 @@
           <p class="error">Please enter a valid email address</p>
         </div>
 
-        <div class="Quary-type">
-          <div class="name">
-            <label>Quary Type <span>*</span></label>
-          </div>
+        <fieldset class="query-type">
+          <legend>Query Type <span>*</span></legend>
 
-          <div class="types">
-            <div class="radio-type">
-              <input type="radio" name="queryType" class="radio" />
-              <label>General Enquiry</label>
-            </div>
-            <div class="radio-type">
-              <input type="radio" name="queryType" class="radio" />
-              <label>Support Request</label>
-            </div>
-          </div>
+          <label class="radio-type">
+            <input type="radio" name="query" value="general" required />
+            General Enquiry
+          </label>
+
+          <label class="radio-type">
+            <input type="radio" name="query" value="support" />
+            Support Request
+          </label>
 
           <p class="error">Please select a query type</p>
-        </div>
+        </fieldset>
 
-        <!-- message -->
         <div class="form-message">
           <label for="message">Message <span>*</span></label>
-          <textarea name="message" id="message"></textarea>
+          <textarea id="message" required></textarea>
           <p class="error">This field is required</p>
         </div>
-        <!-- check box -->
+
         <div class="check-box">
-          <input type="checkbox" />
-          <label for="">I concent to being contacted by the team</label>
+          <input type="checkbox" id="consent" required />
+          <label for="consent">I consent to being contacted by the team</label>
           <p class="error">
             To submit this form, please consent to being contacted
           </p>
         </div>
-        <!-- button -->
-        <div class="">
-          <button type="submit" class="submit">submit</button>
-        </div>
-        <div class="succed">
-          <p>
-            🎉 Your form has been submitted successfully! Thank you for
-            contacting us.
-          </p>
-        </div>
+
+        <button type="submit" class="submit">Submit</button>
+
+        <div class="success">🎉 Your form has been submitted successfully!</div>
       </form>
     </div>
-    <script src="./assets/index.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
