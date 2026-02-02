@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h1 class="contact-us">Contact Us</h1>
+
+      <form action="#">
+        <div class="name-info">
+          <div class="name">
+            <label for="name">First Name <span>*</span></label>
+            <input type="text" id="name" />
+            <p class="error">This field is required</p>
+          </div>
+
+          <div class="family">
+            <label for="last-name">Last Name <span>*</span></label>
+            <input type="text" id="last-name" />
+            <p class="error">This field is required</p>
+          </div>
+        </div>
+
+        <div class="email-address">
+          <label for="email">Email Address <span>*</span></label>
+          <input type="email" id="email" required />
+          <p class="error">Please enter a valid email address</p>
+        </div>
+
+        <div class="Quary-type">
+          <div class="name">
+            <label>Quary Type <span>*</span></label>
+          </div>
+
+          <div class="types">
+            <div class="radio-type">
+              <input type="radio" name="queryType" class="radio" />
+              <label>General Enquiry</label>
+            </div>
+            <div class="radio-type">
+              <input type="radio" name="queryType" class="radio" />
+              <label>Support Request</label>
+            </div>
+          </div>
+
+          <p class="error">Please select a query type</p>
+        </div>
+
+        <!-- message -->
+        <div class="form-message">
+          <label for="message">Message <span>*</span></label>
+          <textarea name="message" id="message"></textarea>
+          <p class="error">This field is required</p>
+        </div>
+        <!-- check box -->
+        <div class="check-box">
+          <input type="checkbox" />
+          <label for="">I concent to being contacted by the team</label>
+          <p class="error">
+            To submit this form, please consent to being contacted
+          </p>
+        </div>
+        <!-- button -->
+        <div class="">
+          <button type="submit" class="submit">submit</button>
+        </div>
+        <div class="succed">
+          <p>
+            🎉 Your form has been submitted successfully! Thank you for
+            contacting us.
+          </p>
+        </div>
+      </form>
+    </div>
+    <script src="./assets/index.js"></script>
+  </body>
+</html>

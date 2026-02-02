@@ -1,0 +1,141 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-color: #e2f1e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+@media (max-width: 400px) {
+  body {
+    font-size: 10px;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  input {
+    font-size: 10px;
+    padding-left: 5px;
+  }
+  .form {
+    width: 90%;
+  }
+  .radio-type {
+    padding: 5px 0 !important;
+    font-size: smaller;
+  }
+}
+
+.form {
+  background-color: white;
+  width: 80%;
+  max-width: 600px;
+  padding: 25px;
+  color: #777a7b;
+  border-radius: 20px;
+  margin: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.name-info {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+.name,
+.family {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+}
+.contact-us {
+  color: #2d4244;
+}
+input[type="text"],
+input[type="email"],
+.radio-type,
+textarea {
+  border: 1px solid #b1bab9;
+  border-radius: 5px;
+  height: 35px;
+  width: 100%;
+  padding: 10px;
+}
+textarea {
+  resize: vertical;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #b1bab9;
+  min-height: 100px;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid #0c7d69;
+}
+
+.types {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radio {
+  width: auto;
+  height: auto;
+}
+.radio-type {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-left: 10px;
+}
+.form-message,
+.email-address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[types="checkbox"] {
+  width: 5%;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #0c7d69;
+}
+
+.submit {
+  background-color: #0c7d69;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 15px 0;
+  font-size: 20px;
+}
+.Quary-type {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.error {
+  color: red;
+  font-size: 10px;
+  display: none;
+}
+.succed {
+  display: none;
+  color: green;
+  margin-top: 10px;
+}
