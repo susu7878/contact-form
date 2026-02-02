@@ -12,25 +12,7 @@ body {
   padding: 1.5rem;
   color: hsl(187, 24%, 22%);
 }
-/* @media (max-width: 400px) {
-  body {
-    font-size: 10px;
-    padding: 10px;
-    gap: 10px;
-  }
 
-  input {
-    font-size: 10px;
-    padding-left: 5px;
-  }
-  .form {
-    width: 90%;
-  }
-  .radio-type {
-    padding: 5px 0 !important;
-    font-size: smaller;
-  }
-} */
 @media (max-width: 600px) {
   .name-info {
     flex-direction: column;
@@ -40,10 +22,6 @@ body {
   .family {
     width: 100%;
   }
-}
-input:hover,
-textarea:hover {
-  border-color: #0c7d69;
 }
 
 .submit:hover {
@@ -57,6 +35,9 @@ textarea:hover {
   padding: 25px;
   border-radius: 20px;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 form {
   display: flex;
@@ -93,20 +74,28 @@ textarea {
   border: 1px solid #b1bab9;
   min-height: 100px;
 }
-input:focus,
+/* input:focus,
 textarea:focus {
   outline: none;
   border: 1px solid #0c7d69;
-}
-input:focus {
+} */
+textarea:focus,
+input[type="email"]:focus,
+input[type="text"]:focus {
   outline: 2px solid hsl(169, 82%, 27%);
   outline-offset: 2px;
+  border: none;
 }
-input,
+input[type="email"]:hover,
+input[type="text"]:hover,
+textarea:hover {
+  border-color: #0c7d69;
+}
+/* input,
 textarea {
   padding: 12px 16px;
   border-radius: 8px;
-}
+} */
 
 .types {
   display: flex;
@@ -167,4 +156,5 @@ input[type="radio"] {
   color: white;
   padding: 12px 16px;
   border-radius: 10px;
+  display: none;
 }
