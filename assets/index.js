@@ -51,7 +51,16 @@ form.addEventListener("submit", function (e) {
   if (isValid) {
     success.style.display = "block";
     form.reset();
-  } else {
-    success.style.display = "none";
+
+    setTimeout(() => {
+      success.style.display = "none";
+    }, 4000);
   }
+
+  //   if (isValid) {
+  //     success.style.display = "block";
+  //     form.reset();
+  //   } else {
+  //     success.style.display = "none";
+  //   }
 });

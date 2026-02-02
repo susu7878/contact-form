@@ -108,8 +108,28 @@ input[type="checkbox"] {
   flex-direction: column;
   gap: 0.25rem;
 }
+input,
+textarea {
+  border: 1px solid #b1bab9;
+  border-radius: 8px;
+}
 
 input:hover,
+textarea:hover {
+  border-color: #0c7d69;
+}
+input,
+textarea {
+  border: 1px solid #b1bab9;
+  border-radius: 8px;
+}
+
+input:hover,
+textarea:hover {
+  border-color: #0c7d69;
+}
+
+/* input:hover,
 textarea:hover {
   border-color: #0c7d69;
 }
@@ -119,7 +139,7 @@ textarea:focus {
   outline: 2px solid #0c7d69;
   outline-offset: 2px;
   border-color: transparent;
-}
+} */
 
 .submit {
   background-color: #0c7d69;
@@ -150,11 +170,14 @@ textarea:focus {
 
 .success {
   display: none;
-  margin-top: 1rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
   background-color: #2d4244;
   color: white;
-  padding: 1rem 1.25rem;
-  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   font-size: 0.9rem;
 }
 
