@@ -1,66 +1,56 @@
-const form = document.getElementById("contactForm");
-const success = document.querySelector(".success");
+const allInput = document.querySelectorAll("input, textarea");
+const submitBTN = document.querySelector(".submit");
+const succed = document.querySelector(".succed");
 
-form.addEventListener("submit", function (e) {
+submitBTN.addEventListener("click", function (e) {
   e.preventDefault();
 
   let isValid = true;
 
-  const inputs = form.querySelectorAll("input, textarea");
-  const radioChecked = form.querySelector(
-    "input[type='radio'][name='query']:checked"
+  const checked = document.querySelector(
+    "input[type='radio'][name='queryType']:checked"
   );
 
-  inputs.forEach((input) => {
+  allInput.forEach((input) => {
     let parent = input.parentElement;
     let error = parent.querySelector(".error");
 
     if (input.type === "radio") {
-      parent = input.closest(".query-type");
+      parent = input.closest(".Quary-type");
       error = parent.querySelector(".error");
     }
 
     if (!error) return;
 
-    const showError = () => (error.style.display = "block");
-    const hideError = () => (error.style.display = "none");
+    const displayErr = () => (error.style.display = "block");
+    const hideErr = () => (error.style.display = "none");
 
     if (input.type === "checkbox") {
       if (!input.checked) {
-        showError();
+        displayErr();
         isValid = false;
-      } else hideError();
+      } else hideErr();
     } else if (input.type === "email") {
       if (!input.checkValidity()) {
-        showError();
+        displayErr();
         isValid = false;
-      } else hideError();
+      } else hideErr();
     } else if (input.type === "radio") {
-      if (!radioChecked) {
-        showError();
+      if (!checked) {
+        displayErr();
         isValid = false;
-      } else hideError();
+      } else hideErr();
     } else {
       if (input.value.trim() === "") {
-        showError();
+        displayErr();
         isValid = false;
-      } else hideError();
+      } else hideErr();
     }
   });
 
   if (isValid) {
-    success.style.display = "block";
-    form.reset();
-
-    setTimeout(() => {
-      success.style.display = "none";
-    }, 4000);
+    succed.style.display = "block";
+  } else {
+    succed.style.display = "none";
   }
-
-  //   if (isValid) {
-  //     success.style.display = "block";
-  //     form.reset();
-  //   } else {
-  //     success.style.display = "none";
-  //   }
 });
