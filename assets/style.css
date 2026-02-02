@@ -13,17 +13,6 @@ body {
   color: hsl(187, 24%, 22%);
 }
 
-@media (max-width: 600px) {
-  .name-info {
-    flex-direction: column;
-  }
-
-  .name,
-  .family {
-    width: 100%;
-  }
-}
-
 .submit:hover {
   background-color: #095f51;
 }
@@ -108,6 +97,22 @@ label {
 .radio {
   width: auto;
   height: auto;
+}
+@media (max-width: 600px) {
+  .name-info {
+    flex-direction: column;
+  }
+  label {
+    width: 100%;
+  }
+  .name,
+  .family {
+    width: 100%;
+  }
+  .types {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .radio-type {
   display: flex;

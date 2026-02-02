@@ -1,6 +1,10 @@
 const allInput = document.querySelectorAll("input, textarea");
 const submitBTN = document.querySelector(".submit");
 const succed = document.querySelector(".succed");
+const config = {
+  minNameLength: 2,
+  minMessageLength: 12,
+};
 
 submitBTN.addEventListener("click", function (e) {
   e.preventDefault();
